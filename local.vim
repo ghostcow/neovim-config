@@ -50,3 +50,6 @@ let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 set completeopt-=preview " remove preview window from deoplete
 " autocmd CompleteDone * pclose " To close preview window of deoplete automagically
+
+" fix garbage characters after cursor
+set guicursor=
