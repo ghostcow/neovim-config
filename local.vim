@@ -33,11 +33,7 @@ let g:deoplete#enable_at_startup = 1
 let g:syntastic_quiet_messages = { "type": "style", "level": "warnings", "regex": "\[F401\]" }
 
 " PyMatcher for CtrlP
-if !has('python')
-	echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-	let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " disable continuation of comments to the next line
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
@@ -46,8 +42,9 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 au FileType lua setl sw=3 sts=3 et
 
 " deoplete & deoplete_jedi
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+" EDIT THIS TO POINT TO CORRECT PYTHON BINS
+let g:python_host_prog = '/home/ubuntu/anaconda2/bin/python'
+let g:python3_host_prog = '/home/ubuntu/anaconda3/bin/python'
 set completeopt-=preview " remove preview window from deoplete
 " autocmd CompleteDone * pclose " To close preview window of deoplete automagically
 
