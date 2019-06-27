@@ -5,13 +5,7 @@ chmod u+x nvim.appimage
 mkdir -p ~/neovim/bin
 mv nvim.appimage ~/neovim/bin/nvim
 
-# edit this according to anaconda setup
-export PATH=~/anaconda2/bin:$PATH
-pip install --upgrade neovim
-export PATH=~/anaconda3/bin:$PATH
-pip install --upgrade neovim
-
-echo -e '\n# nvim\nexport PATH="$HOME/neovim/bin:$PATH"\n' >> ~/.zshrc
+echo -e '\n# nvim\nexport PATH="$HOME/neovim/bin:$PATH"\n' >> ~/.bashrc
 
 mkdir -p ~/.config/nvim/
 cp init.vim local.vim local.bundles.vim ~/.config/nvim
@@ -20,4 +14,6 @@ ln -s ~/.config/nvim/local.bundles.vim ~/.nvimrc.local.bundles
 ln -s ~/.config/nvim/local.vim ~/.nvimrc.local
 
 ~/neovim/bin/nvim +NeoBundleInstall +qall
-echo 'Restart zsh to run nvim'
+echo 'Restart bash to run nvim'
+
+cp ./.tmux.conf ~
