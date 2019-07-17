@@ -6,6 +6,7 @@ mkdir -p ~/neovim/bin
 mv nvim.appimage ~/neovim/bin/nvim
 
 echo -e '\n# nvim\nexport PATH="$HOME/neovim/bin:$PATH"\n' >> ~/.bashrc
+echo -e '\nalias lr="ls -ltrh\n"' >> ~/.bashrc
 
 mkdir -p ~/.config/nvim/
 cp init.vim local.vim local.bundles.vim ~/.config/nvim
